@@ -1,0 +1,19 @@
+﻿<Window x:Class="StudentSignup.SignUpStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Student Signup" Height="300" Width="300">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <Label>First Name:</Label>
+        <TextBox Text="{Binding Student.FirstName, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Label>Last Name:</Label>
+        <TextBox Text="{Binding Student.LastName, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Label>Course ID:</Label>
+        <TextBox Text="{Binding Student.CourseID, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Label>Email Address:</Label>
+        <TextBox Text="{Binding Student.EmailAddress, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Label>Password:</Label>
+        <TextBox Text="{Binding Student.Password, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Button Command="{Binding UpdateCommand}">Update</Button>
+        <!--<Button Content="Sign Up" Click="Button_Click" Height="25" HorizontalAlignment="left"></Button>-->
+    </StackPanel>
+</Window>

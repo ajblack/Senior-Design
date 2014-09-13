@@ -1,0 +1,12 @@
+﻿<Window x:Class="StudentSignup.AdminLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AdminLogin" Height="300" Width="300">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <Label>User Name:</Label>
+        <TextBox Text="{Binding AdminUser.Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="150"/>
+        <Label>Password:</Label>
+        <TextBox Text="{Binding AdminUser.Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="150"/>
+        <Button Command="{Binding UpdateCommand}">Log In</Button>
+    </StackPanel>
+</Window>

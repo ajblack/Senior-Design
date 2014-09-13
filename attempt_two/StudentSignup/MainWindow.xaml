@@ -1,0 +1,9 @@
+﻿<Window x:Class="StudentSignup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Student Sign Up" Height="300" Width="300">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <Button Content="Create Student Account" Click="Button_Click" Height="25" HorizontalAlignment="left"></Button>
+        <Button Content="Admin Login" Click="Button2_Click" Height="25" HorizontalAlignment="left"></Button>
+    </StackPanel>
+</Window>

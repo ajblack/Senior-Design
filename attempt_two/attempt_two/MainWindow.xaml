@@ -1,0 +1,12 @@
+﻿<Window x:Class="attempt_two.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="300">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <Label>First Name:</Label>
+        <TextBox Text="{Binding Student.FirstName, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Label>Last Name:</Label>
+        <TextBox Text="{Binding Student.LastName, UpdateSourceTrigger=PropertyChanged}" Width="150"/>
+        <Button Command="{Binding UpdateCommand}">Update</Button>
+    </StackPanel>
+</Window>
