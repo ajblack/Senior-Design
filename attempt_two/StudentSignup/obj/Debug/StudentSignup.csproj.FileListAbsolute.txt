@@ -19,3 +19,6 @@ C:\Users\Austin Blackman\Documents\Visual Studio 2013\Projects\attempt_two\Stude
 C:\Users\Austin Blackman\Documents\Visual Studio 2013\Projects\attempt_two\StudentSignup\obj\Debug\Views\SignUpStudent.baml
 C:\Users\Austin Blackman\Documents\Visual Studio 2013\Projects\attempt_two\StudentSignup\obj\Debug\Views\AdminLogin.g.cs
 C:\Users\Austin Blackman\Documents\Visual Studio 2013\Projects\attempt_two\StudentSignup\obj\Debug\Views\SignUpStudent.g.cs
+C:\Users\Austin Blackman\Documents\GitHub\Senior-Design\attempt_two\StudentSignup\bin\Debug\StudentSignup.exe.config
+C:\Users\Austin Blackman\Documents\GitHub\Senior-Design\attempt_two\StudentSignup\obj\Debug\StudentSignup.exe
+C:\Users\Austin Blackman\Documents\GitHub\Senior-Design\attempt_two\StudentSignup\obj\Debug\StudentSignup.pdb

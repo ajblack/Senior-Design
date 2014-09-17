@@ -13,6 +13,29 @@ using MongoDB.Driver.Builders;
 
 namespace StudentSignup.ViewModels
 {
+
+    class AdminLoginContext
+    {
+        private MongoDatabase db;
+
+        public AdminLoginContext()
+        {
+            String uri = "mongodb://austin:Ozzyblack12!@ds033740.mongolab.com:33740/lab_notebook";
+            MongoUrl url = new MongoUrl(uri);
+            MongoClient client = new MongoClient(url);
+            MongoServer server = client.GetServer();
+            this.db = server.GetDatabase(url.DatabaseName);
+            var admin_users = db.GetCollection<AdminUser>("Admin_accounts");
+        }
+
+        public MongoCollection<AdminUser> Users
+        {
+            get
+            {
+                return db.GetCollection<AdminUser>("Admin_acccounts");
+            }
+        }
+    }
     class AdminLoginViewModel
     {
         private AdminUser _User;
@@ -52,38 +75,14 @@ namespace StudentSignup.ViewModels
         {
             // Debug.Assert(false, String.Format("{0} {1} {2} {3} was updated", Student.FirstName, Student.LastName, Student.CourseID, Student.Password));
             Console.WriteLine("admin name is {0}", _User.Username);
+            AdminLoginContext ctx = new AdminLoginContext();
+            ctx.Users.AsQueryable().All();
+           
 
-            //this is where I think I can insert my mongo shit to update the database
-            String uri = "mongodb://austin:Ozzyblack12!@ds033740.mongolab.com:33740/lab_notebook";
-
-            MongoUrl url = new MongoUrl(uri);
-            MongoClient client = new MongoClient(url);
-            MongoServer server = client.GetServer();
-            MongoDatabase db = server.GetDatabase(url.DatabaseName);
-            var admin_users = db.GetCollection<BsonDocument>("Admin_accounts");
-            var query =
-                from e in admin_users.AsQueryable<AdminUser>()
-                where e.Username == _User.Username && e.Password == _User.Password
-                select e;
-            Console.WriteLine("query is {0}", query);
-            foreach (var employee in query)
-            {
-                Console.WriteLine("here!!!");
-            }
-            //var admin_users = db.GetCollection<BsonDocument>("Admin_accounts");
-            //var query = new QueryDocument("username", _User.Username);
-            //var pass_query = new QueryDocument("password",_User.Password);      
-            //foreach (BsonDocument item in admin_users.Find(query))
-            //{
-            //    //BsonElement user_name = item.GetElement("username");
-            //    BsonElement pass_word = item.GetElement("password");
-                
-            //    //Console.WriteLine("Username is {0} and password is {1}", user_name.Value, pass_word.Value);
-
-            //}
-            server.Disconnect();
+            //server.Disconnect();
         }
 
+      
          public ICommand UpdateCommand
          {
              get;
